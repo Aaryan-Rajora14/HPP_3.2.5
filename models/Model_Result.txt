@@ -1,0 +1,87 @@
+The Training and test Result of this Machine learning model:
+
+Dataset Shape: (1000, 13)
+
+Dataset Info:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   price             1000 non-null   int64 
+ 1   area              1000 non-null   int64 
+ 2   bedrooms          1000 non-null   int64 
+ 3   bathrooms         1000 non-null   int64 
+ 4   stories           1000 non-null   int64 
+ 5   mainroad          1000 non-null   object
+ 6   guestroom         1000 non-null   object
+ 7   basement          1000 non-null   object
+ 8   hotwaterheating   1000 non-null   object
+ 9   airconditioning   1000 non-null   object
+ 10  parking           1000 non-null   int64 
+ 11  prefarea          1000 non-null   object
+ 12  furnishingstatus  1000 non-null   object
+dtypes: int64(6), object(7)
+memory usage: 101.7+ KB
+None
+
+Missing Values:
+price               0
+area                0
+bedrooms            0
+bathrooms           0
+stories             0
+mainroad            0
+guestroom           0
+basement            0
+hotwaterheating     0
+airconditioning     0
+parking             0
+prefarea            0
+furnishingstatus    0
+dtype: int64
+
+Unique values in categorical columns:
+mainroad: ['Yes' 'No']
+guestroom: ['No' 'Yes']
+basement: ['No' 'Yes']
+hotwaterheating: ['Yes' 'No']
+airconditioning: ['Yes' 'No']
+prefarea: ['New Delhi' 'East Delhi' 'North Delhi' 'West Delhi' 'South Delhi'
+ 'Central Area']
+furnishingstatus: ['Semi-Furnsihed' 'Unfurnished' 'Furnished']
+Training set shape: (800, 12)
+Test set shape: (200, 12)
+Initial Gradient Boosting Performance:
+Training R²: 0.9887
+Test R²: 0.9789
+Training RMSE: 1,000,070.70
+Test RMSE: 1,318,133.20
+
+Performing hyperparameter tuning...
+
+==================================================
+TUNED GRADIENT BOOSTING PERFORMANCE:
+==================================================
+Best Parameters: {'subsample': 0.8, 'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_depth': 3, 'learning_rate': 0.15}
+Training R²: 0.9955
+Test R²: 0.9811
+Training RMSE: 629,294.28
+Test RMSE: 1,248,064.69
+
+Feature Importance:
+             feature  importance
+0               area    0.861567
+10          prefarea    0.121146
+11  furnishingstatus    0.003848
+8    airconditioning    0.003667
+2          bathrooms    0.003320
+4           mainroad    0.003010
+5          guestroom    0.001123
+1           bedrooms    0.000525
+9            parking    0.000521
+3            stories    0.000505
+6           basement    0.000501
+7    hotwaterheating    0.000264
+Model saved successfully as HPP_Model_3.2.pkl
+Loaded model test R²: 0.9811
